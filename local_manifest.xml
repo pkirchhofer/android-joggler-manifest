@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="joggler" fetch="git://github.com/pkirchhofer/" />
+
+  <remove-project name="device/common" />
+  <remove-project name="platform/bionic" />
+  <remove-project name="platform/frameworks/base" />
+  <remove-project name="platform/hardware/libhardware" />
+  <remove-project name="platform/hardware/libhardware_legacy" />
+
+  <project path="bionic" name="android-bionic" remote="joggler" revision="joggler" />
+  <project path="device/common" name="android-device-common" remote="joggler" revision="joggler" />
+  <project path="device/joggler" name="android-device-joggler" remote="joggler" revision="master" />
+  <project path="frameworks/base" name="android-frameworks-base" remote="joggler" revision="joggler" />
+  <project path="hardware/libhardware" name="android-hardware-libhardware" remote="joggler" revision="joggler" />
+  <project path="hardware/libhardware_legacy" name="android-hardware-libhardware_legacy" remote="joggler" revision="joggler" />
+  <project path="joggler-boot" name="android-boot" remote="joggler" revision="master" />
+  <project path="joggler-kernel" name="android-kernel" remote="joggler" revision="master" />
+</manifest>
