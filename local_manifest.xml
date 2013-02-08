@@ -7,6 +7,7 @@
   <remove-project name="platform/frameworks/base" />
   <remove-project name="platform/hardware/libhardware" />
   <remove-project name="platform/hardware/libhardware_legacy" />
+  <remove-project name="kernel/common" />
 
   <project path="bionic" name="android-bionic" remote="joggler" revision="joggler" />
   <project path="device/common" name="android-device-common" remote="joggler" revision="joggler" />
