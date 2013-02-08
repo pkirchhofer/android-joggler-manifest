@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="joggler" fetch="git://github.com/pkirchhofer/" />
+  <remote name="cyanogenmod" fetch="git://github.com/CyanogenMod/" />
 
   <remove-project name="device/common" />
   <remove-project name="platform/bionic" />
@@ -17,4 +18,5 @@
   <project path="hardware/libhardware_legacy" name="android-hardware-libhardware_legacy" remote="joggler" revision="joggler" />
   <project path="joggler-boot" name="android-boot" remote="joggler" revision="master" />
   <project path="joggler-kernel" name="android-kernel" remote="joggler" revision="master" />
+  <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="cyanogenmod" revision="ics" />
 </manifest>
