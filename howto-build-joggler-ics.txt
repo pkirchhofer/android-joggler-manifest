@@ -10,11 +10,16 @@ $ make
 
 This will take a while ...
 
-Afterwards partition USB stick using the following partition layout:
-1. Rest of device - vfat - User data partition
-2.  50 MB         - vfat - Boot partition
-3. 300 MB         - ext4 - System partition
-4.   1 GB         - ext4 - System data partition
+Afterwards partition a USB stick using the following partition layout:
+
++-----+----------------+------+--------+-----------------------+
+| Nr. | Size           | Type | Label  | Description           |
++-----+----------------+------+--------+-----------------------+
+| 1   | Rest of device | vfat | user   | User data partition   |
+| 2   | 50 MB          | vfat | boot   | Boot partition        |
+| 3   | 300 MB         | ext4 | system | System partition      |
+| 4   | at least 1 GB  | ext4 | data   | System data partition |
++-----+----------------+------+--------+-----------------------+
 
 [This example will use USB stick device node /dev/sdd]
 $ sudo mkfs.vfat -n user /dev/sdd1
