@@ -1,0 +1,24 @@
+Make sure root access and the adbd debugging service are enabled:
+
+[File system/default.prop]
+ro.secure=0
+debug.adbd=1
+
+1. Download and unpack Google Apps from http://goo.im/gapps/gapps-ics-20120429-signed.zip
+
+$ adb connect <ip_of_android_joggler>
+
+Check that we have root access:
+
+$ adb shell id
+uid=0(root) gid=0(root)
+
+Install Google Apps via adb:
+
+$ adb shell mount -o remount,rw /
+$ adb push system/app/GoogleServicesFramework.apk /system/app
+$ adb push system/app/GoogleLoginService.apk /system/app
+$ adb push system/app/Phonesky.apk /system/app
+$ adb shell mount -o remount,ro /
+
+Launch "Play Store" and you're done!
