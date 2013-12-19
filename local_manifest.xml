@@ -13,6 +13,6 @@
   <project path="frameworks/base" name="android-frameworks-base" remote="joggler" revision="joggler-ics" />
   <project path="hardware/libhardware_legacy" name="android-hardware-libhardware_legacy" remote="joggler" revision="joggler-ics" />
   <project path="joggler-boot" name="android-boot" remote="joggler" revision="master" />
-  <project path="joggler-kernel" name="android-kernel-3.10" remote="joggler" revision="joggler-3.10" />
+  <project path="joggler-kernel" name="android-kernel" remote="joggler" revision="joggler-3.10" />
   <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="cyanogenmod" revision="ics" />
 </manifest>
