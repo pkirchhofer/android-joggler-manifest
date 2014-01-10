@@ -2,7 +2,8 @@ $ mkdir android-x86
 $ cd android-x86
 $ repo init -u http://git.android-x86.org/manifest -b ics-x86
 $ git clone git://github.com/pkirchhofer/android-joggler-manifest.git joggler-manifest
-$ cp joggler-manifest/local_manifest.xml .repo/
+$ mkdir .repo/local_manifests
+$ cp joggler-manifest/local_manifest-ics.xml .repo/local_manifests
 $ repo sync -j4
 $ . build/envsetup.sh
 $ lunch joggler-user
