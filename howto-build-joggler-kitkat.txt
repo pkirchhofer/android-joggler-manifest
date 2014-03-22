@@ -1,0 +1,39 @@
+$ mkdir android-x86-kitkat
+$ cd android-x86-kitkat
+$ repo init -u http://git.android-x86.org/manifest -b kitkat-x86
+$ git clone git://github.com/pkirchhofer/android-joggler-manifest.git joggler-manifest
+$ mkdir .repo/local_manifests
+$ ln -s $(realpath joggler-manifest/local_manifest-kitkat.xml) .repo/local_manifests/
+$ repo sync -j4
+$ . build/envsetup.sh
+$ lunch joggler-userdebug
+$ make
+
+This will take a while ...
+
+Afterwards partition a USB stick using the following partition layout:
+
++-----+----------------+------+----------------+-----------------------+
+| Nr. | Size           | Type | Label          | Description           |
++-----+----------------+------+----------------+-----------------------+
+| 1   | Rest of device | vfat | droid-user     | User data partition   |
+| 2   | 50 MB          | vfat | droid-boot     | Boot partition        |
+| 3   | 300 MB         | ext4 | android-system | System partition      |
+| 4   | at least 1 GB  | ext4 | android-data   | System data partition |
++-----+----------------+------+----------------+-----------------------+
+
+[This example will use USB stick device node /dev/sdd]
+$ sudo mkfs.vfat -n user /dev/sdd1
+$ sudo mkfs.vfat -n boot /dev/sdd2
+$ sudo mkfs.ext4 -L system /dev/sdd3
+$ sudo mkfs.ext4 -L data /dev/sdd4
+$ mkdir -p joggler/{user,boot,system}
+$ sudo mount /dev/sdd1 joggler/user
+$ sudo mount /dev/sdd2 joggler/boot
+$ sudo mount /dev/sdd3 joggler/system
+$ sudo chmod a+rwx joggler/{user,boot,system}
+$ sudo cp joggler-boot/{boot,startup}.nsh joggler/user
+$ sudo cp -R joggler-boot/* joggler/boot
+$ cp -R out/target/product/joggler/root/* joggler/system
+$ cp -R out/target/product/joggler/system/* joggler/system/system
+$ sudo umount joggler/{user,boot,system}
