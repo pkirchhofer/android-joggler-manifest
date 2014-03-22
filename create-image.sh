@@ -1,4 +1,4 @@
-#!/bin/sh -ex
+#!/bin/bash -ex
 # Create bootable Android system image for Joggler (RAW format)
 
 IMAGE_FILE=joggler-android-kitkat-$(date +%F).img
