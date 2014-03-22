@@ -1,7 +1,7 @@
 #!/bin/sh -ex
 # Create bootable Android system image for Joggler (RAW format)
 
-IMAGE_FILE=joggler-android-ics.img
+IMAGE_FILE=joggler-android-kitkat-$(date +%F).img
 ANDROID_BASEDIR=..
 
 # Create 2GB image file

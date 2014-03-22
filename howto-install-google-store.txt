@@ -13,12 +13,20 @@ Check that we have root access:
 $ adb shell id
 uid=0(root) gid=0(root)
 
-Install Google Apps via adb:
+Install Google Apps via adb (for Android 4.0.4 - Ice Cream Sandwitch ICS):
 
 $ adb shell mount -o remount,rw /
 $ adb push system/app/GoogleServicesFramework.apk /system/app
 $ adb push system/app/GoogleLoginService.apk /system/app
 $ adb push system/app/Phonesky.apk /system/app
+$ adb shell mount -o remount,ro /
+
+Install Google Apps via adb (for Android 4.4.2 - Kit Kat KK):
+
+$ adb shell mount -o remount,rw /
+$ adb push system/app/GoogleServicesFramework.apk /system/priv-app
+$ adb push system/app/GoogleLoginService.apk /system/priv-app
+$ adb push system/app/Phonesky.apk /system/priv-app
 $ adb shell mount -o remount,ro /
 
 Launch "Play Store" and you're done!
