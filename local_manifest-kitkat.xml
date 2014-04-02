@@ -4,22 +4,24 @@
   <remote name="cyanogenmod" fetch="git://github.com/CyanogenMod/" />
 
   <remove-project name="platform/bionic" />
+  <remove-project name="platform/build" />
   <remove-project name="platform/dalvik" />
   <remove-project name="platform/frameworks/base" />
+  <remove-project name="platform/frameworks/native" />
   <remove-project name="platform/hardware/libhardware_legacy" />
+  <remove-project name="platform/packages/apps/Settings" />
   <remove-project name="platform/system/core" />
   <remove-project name="kernel/common" />
 
   <project path="bionic" name="android-bionic" remote="joggler" revision="joggler-kitkat" />
+  <project path="build" name="android-build" remote="joggler" revision="joggler-kitkat" />
   <project path="dalvik" name="android-dalvik" remote="joggler" revision="joggler-kitkat" />
   <project path="device/joggler" name="android-device-joggler" remote="joggler" revision="joggler-kitkat" />
   <project path="frameworks/base" name="android-frameworks-base" remote="joggler" revision="joggler-kitkat" />
+  <project path="frameworks/native" name="android-frameworks-native" remote="joggler" revision="joggler-kitkat" />
   <project path="hardware/libhardware_legacy" name="android-hardware-libhardware_legacy" remote="joggler" revision="joggler-kitkat" />
   <project path="joggler-boot" name="android-boot" remote="joggler" revision="master" />
   <project path="kernel" name="android-kernel" remote="joggler" revision="joggler-3.10" />
+  <project path="packages/apps/Settings" name="android-packages-apps-settings" remote="joggler" revision="joggler-kitkat" />
   <project path="system/core" name="android-system-core" remote="joggler" revision="joggler-kitkat" />
-<!--
-  <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="cyanogenmod" revision="cm-10.2" />
-  <project path="packages/apps/CyanogenModSupport" name="android_frameworks_support" remote="cyanogenmod" revision="cm-10.2" />
--->
 </manifest>
