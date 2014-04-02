@@ -21,10 +21,11 @@ sudo losetup /dev/loop0 ${IMAGE_FILE}
 sudo kpartx -a -v /dev/loop0
 
 # Format previously created partitions
+MKFS_EXT4_OPTIONS="-O ^uninit_bg -E lazy_itable_init=0,lazy_journal_init=0"
 sudo mkfs.vfat -n droid-user /dev/mapper/loop0p1
 sudo mkfs.vfat -n droid-boot /dev/mapper/loop0p2
-sudo mkfs.ext4 -L android-system /dev/mapper/loop0p3
-sudo mkfs.ext4 -L android-data /dev/mapper/loop0p4
+sudo mkfs.ext4 -L android-system ${MKFS_EXT4_OPTIONS} /dev/mapper/loop0p3
+sudo mkfs.ext4 -L android-data ${MKFS_EXT4_OPTIONS} /dev/mapper/loop0p4
 
 # Mount partitions
 mkdir -p joggler-image/{user,boot,system}
